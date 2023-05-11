@@ -7,12 +7,7 @@
 --table                                          # MySql表
 --num-mappers                                    # MapReduce Map的个数（强烈建议指定Map的个数）
 
---column-family                                  # 指定HBase列族
---hbase-row-key                                  # 指定MySql数据那个字段作为Row Key（一般用主键）
---hbase-table                                    # Hbase表名
---hbase-create-table                             # 自动创建HBase表
-```
-
+--column-family       
 #### 二、将下面的命令粘到命令行执行（将MySql数据导入到HBase表），参数说明请看上面，反斜杠表示换行
 ```bash
 $ sqoop import \
