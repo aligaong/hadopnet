@@ -6,7 +6,6 @@
 
 ##### 基础理论
 ```bash
-1，ResourceManager为主节点（整个YARN的核心，统计整个集群的资源使用情况），NodeManager（从节点）
 2，NodeManager采集当前机器资源定时汇报给ResourceManager和管理Container生命周期（每一DataNode机器上都会有一个NodeManager，它们是一比一的关系）
 3，Container（任务执行容器），默认NodeManager启动线程监控Container大小（默认1GB），如果超出申请资源额度则kill掉，Container支持Linux内核的cGroup隔离
 ```
