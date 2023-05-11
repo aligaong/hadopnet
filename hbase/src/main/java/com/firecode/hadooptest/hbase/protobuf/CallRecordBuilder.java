@@ -15,10 +15,6 @@ public final class CallRecordBuilder {
     /**
      * <code>required string dnumPhone = 1;</code>
      */
-    boolean hasDnumPhone();
-    /**
-     * <code>required string dnumPhone = 1;</code>
-     */
     java.lang.String getDnumPhone();
     /**
      * <code>required string dnumPhone = 1;</code>
