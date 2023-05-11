@@ -16,9 +16,7 @@ import com.datastax.driver.mapping.annotations.Table;
 public class CallRecord {
 	/**
 	 * 主键
-	 */
-	@ClusteringColumn(0)
-	private Long id;
+	 *
 	
 	/**
 	 * 分区列
