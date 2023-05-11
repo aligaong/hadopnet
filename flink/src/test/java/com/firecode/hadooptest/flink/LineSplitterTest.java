@@ -14,11 +14,6 @@ public class LineSplitterTest
      * Create the test case
      *
      * @param testName name of the test case
-     */
-    public LineSplitterTest( String testName )
-    {
-        super( testName );
-    }
 
     /**
      * @return the suite of tests being tested
