@@ -9,9 +9,7 @@ $ wget http://mirror.bit.edu.cn/apache/hadoop/common/hadoop-3.1.2/hadoop-3.1.2.t
 ```bash
 export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_171                                                # 修改 JAVA_HOME
 export HDFS_DATANODE_USER=root                                                            # DataNode所使用的角色
-export HDFS_NAMENODE_USER=root                                                            # NameNode所使用的角色
-export HDFS_SECONDARYNAMENODE_USER=root                                                   # SecondaryNameNode所使用的角色
-export HADOOP_SECURE_DN_USER=root                                                         # DataNode数据安全传输所使用的角色（建议不要输用root，这个角色单节点可以不配）
+export HDFS_NAMENODE_USER=root                                                            # NameNode所使用的角色                                                   # DataNode数据安全传输所使用的角色（建议不要输用root，这个角色单节点可以不配）
 ```
 ##### 2.2 修改 [vi core-site.xml]
 ```bash
