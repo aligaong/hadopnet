@@ -4,21 +4,14 @@
 	<groupId>com.firecode</groupId>
 	<artifactId>hadoop-test</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>pom</packaging>
-
-	<distributionManagement>
-		<site>
+	<pack
 			<id>website</id>
 			<url>scp://webhost.company.com/www/website</url>
 		</site>
 	</distributionManagement>
 
 	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>1.8</java.version>
-		<junit.version>4.10</junit.version>
-		<hadoop.version>3.1.2</hadoop.version>
-	</properties>
+
 
 	<dependencyManagement>
 		<dependencies>
