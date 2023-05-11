@@ -7,10 +7,7 @@ import java.util.function.Consumer;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.KeeperException;
 import org.apache.zookeeper.WatchedEvent;
-import org.apache.zookeeper.Watcher;
-import org.apache.zookeeper.ZooDefs;
-import org.apache.zookeeper.ZooKeeper;
-import org.apache.zookeeper.data.Stat;
+
 
 import com.firecode.hadooptest.zookeeper.connection.ZookeeperFactory;
 
@@ -64,12 +61,7 @@ public class DistributeLock implements Watcher {
 		 * 参数 3：权限，完全开放权限
 		 * 参数4：临时节点(绑定Session)，连接断开后自动删除，后面加 SEQUENTIAL说明重名没有关系，因为它是往后加序列号的写
 		 */
-		selfPath = zk.create(SUB_PATH, null, ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL_SEQUENTIAL);
-		System.err.println("创建锁路径："+selfPath+"，线程ID："+Thread.currentThread().getId());
-		if(checkMinPath()){
-			return true;
-		}
-		return false;
+	
 	}
 	
 	public boolean checkMinPath() throws KeeperException, InterruptedException{
