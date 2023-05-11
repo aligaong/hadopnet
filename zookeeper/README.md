@@ -13,11 +13,7 @@ $ vi /etc/profile                               # 修改环境变量，添加如
     PATH=$PATH:$ZOOKEEPER_HOME/bin
 $ :wq                                           # 保存修改
 $ source /etc/profile                           # 重读配置使环境变量生效
-
-$ mv zoo_sample.cfg zoo.cfg                     # 到Zookeeper conf目录修改配置文件名称
-$ vi zoo.cfg                                    # 修改配置文件内容如下
-    tickTime=2000                               # 服务器之间或客户端之间维持心跳的时间间隔（单位毫秒）
-    initLimit=10                                # 从节点或客户端初始化时，连接主节点的超时时间（超时时间=tickTime * initLimit）
+                 # 从节点或客户端初始化时，连接主节点的超时时间（超时时间=tickTime * initLimit）
     syncLimit=5                                 # 主节点与从节点进行同步操作时的超时时间（超时时间=tickTime * syncLimit）
     clientPort=2181                             # 客户端所连接的服务器所监听的端口号，默认是2181。即zookeeper对外提供访问的端口号
     dataDir=/home/zookeeper-3.4.6/data          # Zookeeper数据目录（注意创建这个目录）
