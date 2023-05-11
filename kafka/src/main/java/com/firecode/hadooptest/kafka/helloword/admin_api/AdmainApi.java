@@ -12,13 +12,7 @@ import org.apache.kafka.clients.admin.AdminClient;
 import org.apache.kafka.clients.admin.AdminClientConfig;
 import org.apache.kafka.clients.admin.AlterConfigOp;
 import org.apache.kafka.clients.admin.Config;
-import org.apache.kafka.clients.admin.ConfigEntry;
-import org.apache.kafka.clients.admin.CreatePartitionsResult;
-import org.apache.kafka.clients.admin.CreateTopicsResult;
-import org.apache.kafka.clients.admin.DeleteTopicsResult;
-import org.apache.kafka.clients.admin.DescribeTopicsResult;
-import org.apache.kafka.clients.admin.ListTopicsOptions;
-import org.apache.kafka.clients.admin.ListTopicsResult;
+import org.apach
 import org.apache.kafka.clients.admin.NewPartitions;
 import org.apache.kafka.clients.admin.NewTopic;
 import org.apache.kafka.clients.admin.TopicDescription;
@@ -57,15 +51,7 @@ public class AdmainApi {
 	static void getTopics() throws InterruptedException, ExecutionException {
 		AdminClient adminClient = adminClient();
 		ListTopicsOptions options = new ListTopicsOptions();
-		// 设置是否列出内部主题（就是Kafka自己的主题，不是我们创建的）
-		options.listInternal(true);
-		ListTopicsResult listTopics = adminClient.listTopics(options);
-		Set<String> sets = listTopics.names().get();
-		for(String name:sets) {
-			System.err.println(name);
-		}
-		System.out.println();
-	}
+		// 设置是否列出
 	
 	/**
 	 * 查询主题详细信息
@@ -89,11 +75,7 @@ public class AdmainApi {
 	
 	/**
 	 * 查询Kafka配置信息
-	 * @throws ExecutionException 
-	 * @throws InterruptedException 
-	 */
-	static void getConfigInfo() throws InterruptedException, ExecutionException {
-		System.out.println("Kafka配置详细信息----------------------------------------------------------");
+	 * @th--------------------------------------------------------");
 		AdminClient adminClient = adminClient();
 		ConfigResource resources = new ConfigResource(ConfigResource.Type.TOPIC, TOPIC_NAME_1);
 		Map<ConfigResource, Config> map = adminClient.describeConfigs(Arrays.asList(resources)).all().get();
@@ -117,12 +99,6 @@ public class AdmainApi {
 	}
 	
 	/**
-	 * 修改增加分区数(注意：分区数只能增加不能减少)
-	 * @throws ExecutionException 
-	 * @throws InterruptedException 
-	 */
-	static void incrPartitions() throws InterruptedException, ExecutionException {
-		AdminClient adminClient = adminClient();
 		Map<String,NewPartitions> map = new HashMap<>();
 		map.put(TOPIC_NAME_1, NewPartitions.increaseTo(3));
 		CreatePartitionsResult createPartitions = adminClient.createPartitions(map);
