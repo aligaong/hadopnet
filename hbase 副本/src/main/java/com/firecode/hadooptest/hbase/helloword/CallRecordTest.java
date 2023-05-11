@@ -17,12 +17,7 @@ import org.apache.hadoop.hbase.client.Put;
 import org.apache.hadoop.hbase.client.Result;
 import org.apache.hadoop.hbase.client.ResultScanner;
 import org.apache.hadoop.hbase.client.Scan;
-import org.apache.hadoop.hbase.client.Table;
-import org.apache.hadoop.hbase.client.TableDescriptor;
-import org.apache.hadoop.hbase.client.TableDescriptorBuilder;
-import org.apache.hadoop.hbase.filter.FilterList;
-import org.apache.hadoop.hbase.filter.PrefixFilter;
-import org.apache.hadoop.hbase.filter.SingleColumnValueFilter;
+import org.apachlueFilter;
 import org.apache.hadoop.hbase.util.Bytes;
 import org.junit.Before;
 import org.junit.Test;
@@ -59,19 +54,7 @@ public class CallRecordTest extends HBaseConnectionTest {
 	@Test
 	public void insert() throws IOException {
 		List<Put> puts = new ArrayList<>();
-		for(int i=0;i<10;i++) {
-			String phone = getPhoneNum("188");
-			for(int j=0;j<100;j++) {
-				//对方的手机号码
-				String dnumPhone = getPhoneNum("158");
-				//通话时长
-				String length = String.valueOf(r.nextInt(99));
-				//呼叫类型：1  呼入，2 呼出
-				String type = String.valueOf(r.nextInt(2));
-				//通话时间
-				LocalDateTime date = getDate(2019);
-				String dateStr = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss").format(date);
-				
+		for(int i=0;i
 				Long milliSecond = date.toInstant(ZoneOffset.of("+8")).toEpochMilli();
 				//用户Long在最大值减去时间戳，那么最近的通话记录就会排在最前面（因为最近的值最大，减去之后就越小），方便我们查询
 				String rowKey = phone+"_"+(Long.MAX_VALUE-milliSecond);
