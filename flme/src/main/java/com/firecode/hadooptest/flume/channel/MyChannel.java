@@ -19,15 +19,6 @@ public class MyChannel extends AbstractChannel {
 
 	}
 	
-	@Override
-	public void put(Event event) throws ChannelException {
-		Transaction transaction = getTransaction();
-		try {
-			Connection connect = DriverManager.getConnection("jdbc:mysql://server004:3306/flume_remote?createDatabaseIfNotExist=true", "root", "Jiang@123");
-			transaction.begin();
-			String str = new String(event.getBody());
-			PreparedStatement prepareStatement = connect.prepareStatement("insert into test(msg) values ('"+str+"')");
-			prepareStatement.executeUpdate();
 			prepareStatement.close();
 			transaction.commit();
 			connect.close();
