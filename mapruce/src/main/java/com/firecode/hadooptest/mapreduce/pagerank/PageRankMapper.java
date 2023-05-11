@@ -28,14 +28,7 @@ public class PageRankMapper extends Mapper<Text,Text,Text,Text>{
 		//这个是我们在配置对象里面自定义的
 		int runCount = context.getConfiguration().getInt("runCount",1);
 		
-		String page = key.toString();
-		Node node = null;
-		if(runCount == 1) {
-			//第一次计算，权重默认为1.0
-			node = Node.fromMR("1.0", value.toString());
-		}else {
-			node = Node.fromMR(value.toString());
-		}
+
 		
 		keyText.set(page);
 		valueText.set(node.toString());
@@ -48,10 +41,7 @@ public class PageRankMapper extends Mapper<Text,Text,Text,Text>{
 			double outValue = node.getPageRank() / node.getAdjacentNodeNames().length;
 			for(int i=0;i<node.getAdjacentNodeNames().length;i++) {
 				String outPage = node.getAdjacentNodeNames()[i];
-				keyText.set(outPage);
-				valueText.set(outValue+"");
-				//B 0.5（页面A投给谁，谁作为Key，Value是这个被投节点所得到的权重值）
-				context.write(keyText, valueText);
+			
 			}
 		}
 	}
