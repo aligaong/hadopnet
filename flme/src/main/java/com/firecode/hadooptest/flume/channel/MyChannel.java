@@ -8,9 +8,6 @@ import java.sql.SQLException;
 
 import org.apache.flume.ChannelException;
 import org.apache.flume.Event;
-import org.apache.flume.Transaction;
-import org.apache.flume.channel.AbstractChannel;
-import org.apache.flume.event.SimpleEvent;
 
 /**
  * 自定义通道（缓冲区，以mysql作为缓冲区）
@@ -19,11 +16,7 @@ import org.apache.flume.event.SimpleEvent;
 public class MyChannel extends AbstractChannel {
 	
 	static{
-		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}
+
 	}
 	
 	@Override
