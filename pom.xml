@@ -15,10 +15,7 @@
 
 	<dependencyManagement>
 		<dependencies>
-			<dependency>
-				<groupId>org.apache.hadoop</groupId>
-				<artifactId>hadoop-hdfs</artifactId>
-				<version>${hadoop.version}</version>
+			<depende>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.hadoop</groupId>
