@@ -5,8 +5,7 @@
 	<artifactId>hadoop-test</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<pack
-			<id>website</id>
-			<url>scp://webhost.company.com/www/website</url>
+			<pany.com/www/website</url>
 		</site>
 	</distributionManagement>
 
