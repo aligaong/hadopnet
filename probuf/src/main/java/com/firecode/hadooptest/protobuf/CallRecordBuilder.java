@@ -12,9 +12,7 @@ public final class CallRecordBuilder {
       // @@protoc_insertion_point(interface_extends:com.firecode.hadooptest.protobuf.CallRecord)
       com.google.protobuf.MessageOrBuilder {
 
-    /**
-     * <code>required string dnum = 1;</code>
-     */
+
     boolean hasDnum();
     /**
      * <code>required string dnum = 1;</code>
