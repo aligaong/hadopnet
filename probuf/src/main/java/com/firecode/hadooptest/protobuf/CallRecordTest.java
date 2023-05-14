@@ -9,7 +9,6 @@ public class CallRecordTest {
 		CallRecordBuilder.CallRecord.Builder builder = CallRecordBuilder.CallRecord.newBuilder();
 		builder.setDate("2019-01-02");
 		builder.setDnum("123456789");
-		builder.setLength("42");
 		builder.setType("1");
 		CallRecord cr = builder.build();
 		System.err.println(cr.toString());
